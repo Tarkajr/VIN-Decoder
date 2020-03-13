@@ -17,13 +17,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "dependencies": {
-    "react": "16.13.0",
-    "react-native": "0.61",
-    "react-redux": "^7.2.0",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
-},
     "updates": {
       "fallbackToCacheTimeout": 0
     },
