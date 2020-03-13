@@ -3,7 +3,7 @@
     "name": "VIN DECODER",
     "slug": "VIN_DECODER",
     "privacy": "public",
-    "sdkVersion": "34.0.0",
+    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
@@ -17,6 +17,13 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "dependencies": {
+    "react": "16.13.0",
+    "react-native": "0.61",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+},
     "updates": {
       "fallbackToCacheTimeout": 0
     },

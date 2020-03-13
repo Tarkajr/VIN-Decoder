@@ -1,3 +1,4 @@
+// WD3PE7CC3A5497199
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TextInput, Keyboard, TouchableWithoutFeedback, Button, Alert } from 'react-native';
 
@@ -19,8 +20,14 @@ export default class App extends Component {
    _submitVin = async (params) => {
      this.setState({ loading: true });
      try {
-       let resp = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/' + this.state.text + '?format=json');
-       let response = await resp.json();
+       let resp = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/' + this.state.text + '?format=json')
+       let response = await resp.json()
+       console.log(response)
+       this.setState({
+         data: [...this.state.data, ...response.Results ],
+         error: response.error || null,
+         loading: false,
+       });
      } catch (error) {
        this.setState({error: error});
      }
@@ -28,10 +35,8 @@ export default class App extends Component {
      this.setState({
        make: this.state.data[6].Value,
        model: this.state.data[8].Value,
-       year: this.state.data[9].Value,
-       loading: false
+       year: this.state.data[9].Value
      });
-
      }
 
 
